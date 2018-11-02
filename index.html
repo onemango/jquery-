@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery模拟滚动条</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			position: relative;
+			width: 400px;
+			height: 700px;
+			margin: 20px auto;
+			border: 2px solid #fe6d6c;
+			overflow: hidden;
+		}
+		.scroll-bar{
+			position: absolute;
+			top: 0;
+			right: 1px;
+			width: 10px;
+			height: 100%;
+			background: #ccc;
+			border-radius: 4px;
+			overflow: hidden;
+		}
+		.scroll-bar span{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background: #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="content">
+			<p>10月28日，一辆公交车在重庆市万州区长江二桥坠入江中，引发关注。据交通运输部微信公众号消息，30日晚，交通运输部上海打捞局潜水员轮番下水，连夜作战。其中第五批下水的潜水员鲁玉鑫在失事公交车内找到了黑匣子(行车数据记录仪)，拆除后于今日凌晨0时50分打捞出水并交给当地公安部门。</p>
+			<p>黑匣子打捞出水后，潜水员水下搜寻探摸暂时告一段落。上海打捞局技术人员又对失事公交车水域进行了重新扫测，为今日车辆的打捞做准备。</p>
+			<p>今日早上五点，上海打捞局技术人员又开始布场调试打捞设备。</p>
+			<h2>水下画面曝光:公交车位置深达70米以上</h2>
+			<p>30日下午，重庆坠江公交水下视频曝光，视频中公交车呈现倾覆状态，车身广告、座位、仪表盘均可清晰看见。</p>
+			<p>据国家应急管理部通报，国家水上应急救援队专业打捞船采用多被束声纳，发现一长约11米、宽约3米物体。经过水下探测、定位，确定为坠江公交车。据现场勘测情况分析，公交车落水的位置位于长江二桥上游约28米、水深约71米处。初步了解公交车呈30度角前倾、车辆结构部分受损。整个客车玻璃窗全部破碎，在客车的前方三四米左右一-处断崖 ,水深90多米。</p>
+			<h2>潜水作业难度极大、危险性大</h2>
+			<p>由于坠江公交车位于水下71米(压力是标准大气压的8. 5倍)处，超过一般60米空气潜水极限，需要使用专业氦氧的气体配比，稍有不慎潜水员将有生命危险。此外，潜水员在淡水中氦氧潜水作业每次最长时间为35分钟，需要5到6个小时来增诚压，每次作业后需休息24小时。</p>
+			<p>据勘测发现，水下有乱石、乱流等危险因素，可见范围只有1-2平方米，潜水作业难度极大、危险性也大。部级工作组要求，开展潜水作业时一定要确保潜水员自身安全，要切实做好超水深潜水作业安全保障，确保救援工作科学安全有序有效进行。</p>
+			<p>目前，救援现场已调集20余名具备深潜能力的潜水员在现场后备接替，现场医疗、应急等潜水保障组也做好安全保障预案。</p>
+			<p>本文综合：交通运输部、中国新闻网</p>
+			<p>10月28日，一辆公交车在重庆市万州区长江二桥坠入江中，引发关注。据交通运输部微信公众号消息，30日晚，交通运输部上海打捞局潜水员轮番下水，连夜作战。其中第五批下水的潜水员鲁玉鑫在失事公交车内找到了黑匣子(行车数据记录仪)，拆除后于今日凌晨0时50分打捞出水并交给当地公安部门。</p>
+			<p>黑匣子打捞出水后，潜水员水下搜寻探摸暂时告一段落。上海打捞局技术人员又对失事公交车水域进行了重新扫测，为今日车辆的打捞做准备。</p>
+			<p>今日早上五点，上海打捞局技术人员又开始布场调试打捞设备。</p>
+			<h2>水下画面曝光:公交车位置深达70米以上</h2>
+			<p>30日下午，重庆坠江公交水下视频曝光，视频中公交车呈现倾覆状态，车身广告、座位、仪表盘均可清晰看见。</p>
+			<p>据国家应急管理部通报，国家水上应急救援队专业打捞船采用多被束声纳，发现一长约11米、宽约3米物体。经过水下探测、定位，确定为坠江公交车。据现场勘测情况分析，公交车落水的位置位于长江二桥上游约28米、水深约71米处。初步了解公交车呈30度角前倾、车辆结构部分受损。整个客车玻璃窗全部破碎，在客车的前方三四米左右一-处断崖 ,水深90多米。</p>
+			<h2>潜水作业难度极大、危险性大</h2>
+			<p>由于坠江公交车位于水下71米(压力是标准大气压的8. 5倍)处，超过一般60米空气潜水极限，需要使用专业氦氧的气体配比，稍有不慎潜水员将有生命危险。此外，潜水员在淡水中氦氧潜水作业每次最长时间为35分钟，需要5到6个小时来增诚压，每次作业后需休息24小时。</p>
+			<p>据勘测发现，水下有乱石、乱流等危险因素，可见范围只有1-2平方米，潜水作业难度极大、危险性也大。部级工作组要求，开展潜水作业时一定要确保潜水员自身安全，要切实做好超水深潜水作业安全保障，确保救援工作科学安全有序有效进行。</p>
+			<p>目前，救援现场已调集20余名具备深潜能力的潜水员在现场后备接替，现场医疗、应急等潜水保障组也做好安全保障预案。</p>
+			<p>本文综合：交通运输部、中国新闻网</p>
+			<p>10月28日，一辆公交车在重庆市万州区长江二桥坠入江中，引发关注。据交通运输部微信公众号消息，30日晚，交通运输部上海打捞局潜水员轮番下水，连夜作战。其中第五批下水的潜水员鲁玉鑫在失事公交车内找到了黑匣子(行车数据记录仪)，拆除后于今日凌晨0时50分打捞出水并交给当地公安部门。</p>
+			<p>黑匣子打捞出水后，潜水员水下搜寻探摸暂时告一段落。上海打捞局技术人员又对失事公交车水域进行了重新扫测，为今日车辆的打捞做准备。</p>
+			<p>今日早上五点，上海打捞局技术人员又开始布场调试打捞设备。</p>
+			<h2>水下画面曝光:公交车位置深达70米以上</h2>
+			<p>30日下午，重庆坠江公交水下视频曝光，视频中公交车呈现倾覆状态，车身广告、座位、仪表盘均可清晰看见。</p>
+			<p>据国家应急管理部通报，国家水上应急救援队专业打捞船采用多被束声纳，发现一长约11米、宽约3米物体。经过水下探测、定位，确定为坠江公交车。据现场勘测情况分析，公交车落水的位置位于长江二桥上游约28米、水深约71米处。初步了解公交车呈30度角前倾、车辆结构部分受损。整个客车玻璃窗全部破碎，在客车的前方三四米左右一-处断崖 ,水深90多米。</p>
+			<h2>潜水作业难度极大、危险性大</h2>
+			<p>由于坠江公交车位于水下71米(压力是标准大气压的8. 5倍)处，超过一般60米空气潜水极限，需要使用专业氦氧的气体配比，稍有不慎潜水员将有生命危险。此外，潜水员在淡水中氦氧潜水作业每次最长时间为35分钟，需要5到6个小时来增诚压，每次作业后需休息24小时。</p>
+			<p>据勘测发现，水下有乱石、乱流等危险因素，可见范围只有1-2平方米，潜水作业难度极大、危险性也大。部级工作组要求，开展潜水作业时一定要确保潜水员自身安全，要切实做好超水深潜水作业安全保障，确保救援工作科学安全有序有效进行。</p>
+			<p>目前，救援现场已调集20余名具备深潜能力的潜水员在现场后备接替，现场医疗、应急等潜水保障组也做好安全保障预案。</p>
+			<p>本文综合：交通运输部、中国新闻网</p>
+		</div>
+		<div class="scroll-bar"><span></span></div>
+	</div>
+
+	<script type="text/javascript" src="lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.mousewheel.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var oBox = $('.box');
+			var oContent = $('.content');
+			var oBar = $('.scroll-bar');
+			var oSpan = $('.scroll-bar span');
+			var box_height = oBox.height();
+			var content_height = oContent.height();
+			var bar_height = oBar.height();
+			var bar_top = oBar.offset().top;
+			
+			// 计算出滚动条的按钮高度
+			// box_height / content_height = span_height / bar_height
+			var span_height = box_height * bar_height / content_height;  //164.4361517913473
+			oSpan.css('height',span_height);
+			
+			// 滚轮事件
+			oBox.on('mousewheel',function(event){
+				event.preventDefault()
+				var span_top = oSpan.offset().top - bar_top;
+				// 鼠标向下滚动
+				if(event.deltaY < 0){
+					// 滚动条top值10的增量
+					span_top += 10;
+					if(span_top > bar_height - span_height){
+						span_top = bar_height - span_height
+					}
+				}else if(event.deltaY > 0){ // 鼠标向上滚动
+					span_top -= 10;
+					if(span_top < 0){
+						span_top = 0;
+					}
+				}
+				oSpan.css('top',span_top);
+				// content_top / content_height = span_top / bar_height
+				var scroll_top = span_top * content_height / bar_height;
+				oContent.css('margin-top',-scroll_top)
+			})
+
+			// 滚动条点击
+			oBar.on('click',function(event){
+				event.preventDefault();
+				var content_top = Math.abs(parseInt(oContent.css('margin-top')));
+				// 点击位置在滚动条按钮的下方
+				if(event.pageY - (oSpan.offset().top + span_height) > 0){
+					// content_top + box_height 与content_height相比较
+					if(content_top + box_height  < content_height - box_height){
+						oContent.css('margin-top', -(content_top + box_height));
+						// content_top / content_height = span_top / bar_height
+						var span_top = bar_height * (content_top + box_height) / content_height;
+						oSpan.css('top',span_top);
+					}else{
+						oContent.css('margin-top', -(content_height - box_height));
+						oSpan.css('top', bar_height - span_height);
+					}
+				}else if(event.pageY - oSpan.offset().top < 0){ // 点击位置在滚动条按钮的上方
+					if(content_top - box_height > 0){
+						oContent.css('margin-top', -(content_top - box_height));
+						// content_top / content_height = span_top / bar_height
+						var span_top = bar_height * (content_top - box_height) / content_height;
+						oSpan.css('top',span_top);
+					}else{
+						oContent.css('margin-top', 0);
+						oSpan.css('top', 0);
+					}
+				}
+			})
+
+			// 移动滚动条按钮
+			oSpan.on('mousedown',function(event){
+				event.preventDefault();
+				var mouse_pageY = event.pageY;
+				var span_top = oSpan.offset().top - bar_top;
+				$(window).on('mousemove',function(evt){
+					var deltaY = evt.pageY - mouse_pageY;
+					var span_distance = span_top + deltaY;
+					if(span_distance < 0){
+						span_distance = 0;
+					}else if(span_distance > bar_height - span_height){
+						span_distance = bar_height - span_height
+					}
+					oSpan.css('top',span_distance);
+					// content_top / content_height = span_top / bar_height
+					var scroll_top = span_distance * content_height / bar_height;
+					oContent.css('margin-top',-scroll_top)
+				})
+				$(window).on('mouseup',function(){
+					$(window).off('mousemove')
+				})
+			})
+
+		})
+	</script>
+</body>
+</html>
